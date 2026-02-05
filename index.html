@@ -3,6 +3,10 @@ title: Strands
 toc: false
 ---
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Chomsky&display=swap');
 
@@ -30,6 +34,10 @@ body {
     font-family: 'Karla', -apple-system, sans-serif;
     background: var(--bg-pink);
     color: var(--text-dark);
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
 .nyt-header {
@@ -426,8 +434,146 @@ body {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nyt-header {
+        padding: 10px 15px;
+        margin: 0;
+    }
+    
+    .nyt-logo {
+        font-size: 22px;
+    }
+    
+    .menu-icon {
+        font-size: 20px;
+    }
+    
+    .game-container {
+        padding: 15px 10px;
+        max-width: 100%;
+    }
+    
+    .title-section {
+        margin: 15px 0 20px 0;
+    }
+    
     .game-title {
-        font-size: 32px;
+        font-size: 28px;
+    }
+    
+    .game-date {
+        font-size: 12px;
+    }
+    
+    .theme-container {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+    }
+    
+    .theme-label {
+        font-size: 11px;
+    }
+    
+    .theme-text {
+        font-size: 20px;
+    }
+    
+    .current-selection {
+        min-height: 40px;
+        margin-bottom: 10px;
+    }
+    
+    .current-word {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    
+    .letter {
+        font-size: 18px;
+        border-width: 1.5px;
+    }
+    
+    .letter.selecting {
+        border-width: 2px;
+    }
+    
+    .grid {
+        gap: 4px;
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .hint-section {
+        margin-bottom: 15px;
+    }
+    
+    .hint-button {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+    
+    .found-counter {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    .victory-modal {
+        padding: 10px;
+        align-items: center;
+    }
+    
+    .victory-content {
+        padding: 25px 20px;
+        max-height: none;
+        min-height: auto;
+        width: 100%;
+        max-width: 90%;
+        border-radius: 12px;
+        margin: auto;
+    }
+    
+    .victory-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+    
+    .victory-heart {
+        font-size: 45px;
+        margin: 10px 0;
+    }
+    
+    .victory-message {
+        font-size: 18px;
+        margin-bottom: 18px;
+        line-height: 1.4;
+    }
+    
+    .valentine-question {
+        font-size: 22px;
+        margin-top: 12px;
+        line-height: 1.3;
+    }
+    
+    .email-prompt {
+        margin-top: 18px;
+        padding-top: 18px;
+    }
+    
+    .email-button {
+        padding: 16px 32px;
+        font-size: 18px;
+    }
+}
+
+/* Extra small screens (iPhone SE, etc) */
+@media (max-width: 375px) {
+    .game-title {
+        font-size: 24px;
     }
     
     .letter {
@@ -436,82 +582,33 @@ body {
     
     .grid {
         gap: 3px;
-        padding: 8px;
-    }
-    
-    .current-word {
-        font-size: 22px;
-    }
-    
-    .victory-modal {
-        padding: 10px;
-        align-items: flex-start;
+        padding: 6px;
     }
     
     .victory-content {
         padding: 20px 15px;
-        max-height: none;
-        min-height: auto;
-        width: 100%;
-        max-width: 95%;
-        border-radius: 12px;
-        margin: 10px auto;
+        max-width: 92%;
     }
     
     .victory-title {
-        font-size: 18px;
-        margin-bottom: 10px;
-        line-height: 1.3;
+        font-size: 14px;
     }
     
     .victory-heart {
-        font-size: 40px;
-        margin: 8px 0;
+        font-size: 38px;
     }
     
     .victory-message {
         font-size: 16px;
-        margin-bottom: 15px;
-        line-height: 1.4;
     }
     
     .valentine-question {
         font-size: 20px;
-        margin-top: 10px;
-        line-height: 1.3;
-    }
-    
-    .email-prompt {
-        margin-top: 15px;
-        padding-top: 15px;
     }
     
     .email-button {
         padding: 14px 28px;
         font-size: 16px;
-    }
-}
-
-/* Extra small screens (iPhone SE, etc) */
-@media (max-width: 375px) {
-    .victory-content {
-        padding: 15px 12px;
-    }
-    
-    .victory-title {
-        font-size: 16px;
-    }
-    
-    .victory-heart {
-        font-size: 35px;
-    }
-    
-    .victory-message {
-        font-size: 14px;
-    }
-    
-    .valentine-question {
-        font-size: 18px;
     }
 }
 
@@ -562,7 +659,7 @@ body {
         </div>
         <div class="email-prompt">
             <button class="email-button" id="emailButton">
-                Click here to answer 👅
+                Click here to say YES 👅
             </button>
         </div>
     </div>
